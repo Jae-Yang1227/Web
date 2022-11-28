@@ -1,21 +1,20 @@
 body{
-    background-color: cornflowerblue;
+    background-color: beige;
 }
 
 p{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 18px;
 }
 
-
 .highlighted{
-    color: white;
+    color: aliceblue;
 }
 
 .pork{
-    color: coral;
+    color: burlywood;
     font-weight: bold;
-    background-color: bisque;
+    background-color: aquamarine;
 }
 
 #listHeadline{

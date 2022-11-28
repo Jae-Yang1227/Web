@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url(resource/color.jpg);
+}
+
+canvas {
+  display: block;
+}
+
+.canvasDiv{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  color: azure;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+  color: khaki;
+  font-size: 13px;
+}
+
+h2{
+  color: moccasin;
+}
+
+h3{
+  color: dimgrey;
+}
+
+h4{
+  color:khaki;
+  font-size: 15px
+}
+
+div{
+background-color: rgba(58, 17, 0, 0.712);
+}
