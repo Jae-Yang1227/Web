@@ -1,0 +1,50 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(resource/琴键背景.jpg);
+}
+
+canvas {
+  display: block;
+}
+
+h1 {
+  color: azure;
+  font-size: 60px;
+  font-family: 'Nerko One', cursive;
+}
+
+h2 {
+  color: gainsboro;
+  font-family: 'Nerko One', cursive;
+  font-style: oblique;
+  font-size: 40px;
+}
+
+h3 {
+  color: lightgrey;
+  font-family: 'Nerko One', cursive;
+  font-size: 20px;
+}
+
+h4 {
+  color: white;
+  font-family: 'Nerko One', cursive;
+  font-size: 40px;
+}
+
+h5 {
+  color: rgba(52, 39, 15, 0.824);
+  font-size: 20px;
+}
+
+div {
+  text-align: center;
+  /* margin: auto; */
+  margin: 3%;
+}
+
+#canvasContainer {
+  margin: 0 auto
+}
