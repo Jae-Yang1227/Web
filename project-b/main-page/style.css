@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-  color: lightgrey;
+  color: rgb(198, 172, 152);
   font-family: 'Nerko One', cursive;
   font-size: 20px;
 }
@@ -43,6 +43,7 @@ div {
   text-align: center;
   margin: 3%;
 }
+
 #canvasContainer {
   display: flex;
   justify-content: center;
