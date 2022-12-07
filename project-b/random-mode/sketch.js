@@ -19,6 +19,22 @@ function preload() {
 }
 // let whiteSound = [aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound]
 // let blackSound = [wSound, rSound, tSound, uSound, iSound, oSound, ooSound]
+function playSound(){
+  if (keyIsPressed) {
+    for (let i = 0; i < whiteKeys.length; i++) {
+      if (whiteKeys[i] == key) {
+        // whiteSound[i].play();
+        aSound.play()
+      }
+    }
+    for (let i = 0; i < blackKeys.length; i++) {
+      if (blackKeys[i] == key) {
+        // blackSound[i].play();
+        sSound.play()
+      }
+    }
+  }
+}
 let trans;
 let xPos;
 let spdX;
