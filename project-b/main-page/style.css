@@ -41,10 +41,9 @@ h5 {
 
 div {
   text-align: center;
-  /* margin: auto; */
   margin: 3%;
 }
-
 #canvasContainer {
-  margin: 0 auto
+  display: flex;
+  justify-content: center;
 }
