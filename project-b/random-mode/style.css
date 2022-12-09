@@ -13,6 +13,7 @@ canvas {
 h1 {
   color: gainsboro;
   font-family: 'Nerko One', cursive;
+  font-size: 60px;
 }
 h2 {
   color: gainsboro;
@@ -38,7 +39,7 @@ h5 {
   font-size: 20px;
 }
 .ins {
-  background-color:rgba(0, 0, 0, 0.269);
+  background-color:rgba(0, 0, 0, 0.443);
 }
 .all{
   display: flex;
