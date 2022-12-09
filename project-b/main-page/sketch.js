@@ -2,14 +2,14 @@ let mySound
 function preload() {
   mySound = loadSound("resource/euphoria.mp3")
 }
-function onVideoLoad() {
-  mySound.autoplay()
-}
-function mousePressed(){
-  if(mySound.isPlaying() == false){
-    mySound.play()
-  }
-}
+// function onVideoLoad() {
+//   mySound.autoplay()
+// }
+// function mousePressed(){
+//   if(mySound.isPlaying() == false){
+//     mySound.play()
+//   }
+// }
 function keyPressed() {
   if(mySound.isPlaying() == true){
     mySound.stop();
@@ -21,9 +21,17 @@ function setup() {
   canvas.parent("canvasContainer");
   background(0);
   blackKeys = [30, 80, 180, 230, 280]
+
 }
 
 function draw() {
+  if(mySound){
+    console.log(mySound.isPlaying());
+    if(mySound.isPlaying() == false){
+    mySound.play()
+    
+    }
+  }
   for (let i = 0; i < 7; i++) {
     fill(235)
     strokeWeight(2)
