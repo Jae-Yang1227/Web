@@ -22,21 +22,6 @@ function preload() {
   whiteSound.push(aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound)
   blackSound.push(wSound, rSound, tSound, uSound, iSound, oSound, ooSound)
 }
-// function keyPressed(){
-//   if(keyCode = 'a'){
-//     aSound.play()
-//   }
-// }
-// function play() {
-//   if(keyIsPressed){
-//     if(key == "a"){
-//       aSound.play()
-//     }
-//   }
-// }
-// let whiteSound = [aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound]
-// let blackSound = [wSound, rSound, tSound, uSound, iSound, oSound, ooSound]
-
 
 let trans;
 let xPos;
@@ -55,7 +40,7 @@ let whiteIfDisplay = [
   false,
   false,
 ];
-
+let env;
 let whiteKeys = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";"];
 
 let blackKeys = ["w", "r", "t", "u", "i", "o", "["];
@@ -79,6 +64,7 @@ function setup() {
   color = 0
   boxX = 10;
   spdX = random(2, 5);
+  env = new p5.Envelope(0.01, 1, 2, 0.1);
 }
 
 function draw() {
@@ -298,26 +284,18 @@ function keyPressed() {
     blackLights.push(new light(blackLightsPos[i], 180));
   }
 }
-// function keyPressed() {
-//     for (let i = 0; i < whiteKeys.length; i++) {
-//       if (whiteKeys[i] == key) {
-//         whiteSound[i].play();
-//       }
-//     }
-//     for (let i = 0; i < blackKeys.length; i++) {
-//       if (blackKeys[i] == key) {
-//         blackSound[i].play();
-//       }
-//     }
-// }
 function playSound() {
   for(let i = 0; i < whiteSound.length; i++){
     if(whiteSound[i]){
       if(keyIsPressed && key == whiteKeys[i] && !whiteSound[i].isPlaying()){
-        push();
-        //noLoop();
         whiteSound[i].play();
-        pop();
+      }
+    }
+  }
+  for(let i = 0; i < blackSound.length; i++){
+    if(blackSound[i]){
+      if(keyIsPressed && key == blackKeys[i] && !blackSound[i].isPlaying()){
+        blackSound[i].play();
       }
     }
   }
@@ -327,6 +305,13 @@ function keyReleased() {
     if(whiteSound[i]){
       if(key == whiteKeys[i] && whiteSound[i].isPlaying()){
         whiteSound[i].stop();
+      }
+    }
+  }
+  for(let i = 0; i < blackSound.length; i++){
+    if(blackSound[i]){
+      if(key == blackKeys[i] && blackSound[i].isPlaying()){
+        blackSound[i].stop();
       }
     }
   }
