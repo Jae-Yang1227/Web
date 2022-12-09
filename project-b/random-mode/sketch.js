@@ -1,29 +1,39 @@
+let aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound,wSound, rSound, tSound, uSound, iSound, oSound, ooSound;
+let whiteSound = [];
+let blackSound = [];
 function preload() {
   aSound = loadSound("resource/A3.MP3")
-  // sSound = loadSound("resource/B3.MP3")
-  // dSound = loadSound("resource/C4.MP3")
-  // fSound = loadSound("resource/D4.MP3")
-  // gSound = loadSound("resource/E4.MP3")
-  // hSound = loadSound("resource/F4.MP3")
-  // jSound = loadSound("resource/G4.MP3")
-  // kSound = loadSound("resource/A4.MP3")
-  // lSound = loadSound("resource/B4.MP3")
-  // llSound = loadSound("resource/C5.MP3")
-  // wSound = loadSound("resource/A33.MP3")
-  // rSound = loadSound("resource/C33.MP3")
-  // tSound = loadSound("resource/D33.MP3")
-  // uSound = loadSound("resource/F33.MP3")
-  // iSound = loadSound("resource/G33.MP3")
-  // oSound = loadSound("resource/A44.MP3")
-  // ooSound = loadSound("resource/C44.MP3")
+  sSound = loadSound("resource/B3.MP3")
+  dSound = loadSound("resource/C4.MP3")
+  fSound = loadSound("resource/D4.MP3")
+  gSound = loadSound("resource/E4.MP3")
+  hSound = loadSound("resource/F4.MP3")
+  jSound = loadSound("resource/G4.MP3")
+  kSound = loadSound("resource/A4.MP3")
+  lSound = loadSound("resource/B4.MP3")
+  llSound = loadSound("resource/C5.MP3")
+  wSound = loadSound("resource/A33.MP3")
+  rSound = loadSound("resource/C44.MP3")
+  tSound = loadSound("resource/D44.MP3")
+  uSound = loadSound("resource/F44.MP3")
+  iSound = loadSound("resource/G44.MP3")
+  oSound = loadSound("resource/A44.MP3")
+  ooSound = loadSound("resource/C55.MP3")
+  whiteSound.push(aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound)
+  blackSound.push(wSound, rSound, tSound, uSound, iSound, oSound, ooSound)
 }
-function playSound() {
-  if(keyIsPressed){
-    if(key == "a"){
-      aSound.play()
-    }
-  }
-}
+// function keyPressed(){
+//   if(keyCode = 'a'){
+//     aSound.play()
+//   }
+// }
+// function play() {
+//   if(keyIsPressed){
+//     if(key == "a"){
+//       aSound.play()
+//     }
+//   }
+// }
 // let whiteSound = [aSound, sSound, dSound, fSound, gSound, hSound, jSound, kSound, lSound, llSound]
 // let blackSound = [wSound, rSound, tSound, uSound, iSound, oSound, ooSound]
 
@@ -59,13 +69,14 @@ let blackLightsPos = [35, 155, 215, 335, 395, 455, 575];
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("canvasContainer");
-  for (let i = 0; i < 10; i++) {
-    whiteLights.push(new Light(i * 60, 180));
-  }
-  for (let i = 0; i < 7; i++) {
-    blackLights.push(new light(blackLightsPos[i], 180));
-  }
+  // for (let i = 0; i < 10; i++) {
+  //   whiteLights.push(new Light(i * 60, 180));
+  // }
+  // for (let i = 0; i < 7; i++) {
+  //   blackLights.push(new light(blackLightsPos[i], 180));
+  // }
   col = 0
+  color = 0
   boxX = 10;
   spdX = random(2, 5);
 }
@@ -73,6 +84,8 @@ function setup() {
 function draw() {
   background(20);
   strokeWeight(4);
+  playSound();
+  // console.log(whiteSound)
   for (let k1 = 0; k1 < 10; k1++) {
     fill(235);
     rect(k1 * 60, 0, 60, 180);
@@ -85,6 +98,10 @@ function draw() {
   }
   textSize(25);
   text("D", 140, 165);
+  text("H", 320, 165);
+  fill(235);
+  text("R", 170, 110);
+  text("U", 350, 110);
 
   if (keyIsPressed) {
     for (let i = 0; i < whiteKeys.length; i++) {
@@ -133,8 +150,8 @@ function draw() {
         blackNote.x < boxX + 30
       ) {
         blackNotes.splice(i, 1);
-        fill(col)
-        col = 255
+        fill(color)
+        color = 255
         console.log("good");
       }
     }
@@ -146,11 +163,17 @@ function draw() {
   boxX = boxX + spdX;
   rect(boxX, 520, 80);
   fill(0)
-  text("box", boxX + 17.5, 570);
+  text("box", boxX + 17.5, 585);
+  text("note", boxX + 17, 560)
   fill(230, col)
   text("Excellent!", 30, 400);
+  fill(230, color)
+  text("Great!", 30, 420)
   if (col > 0) {
     col = col - 2.5
+  }
+  if (color > 0) {
+    color = color - 2.5
   }
 }
 class Light {
@@ -262,17 +285,20 @@ function keyPressed() {
     if (whiteKeys[i] == key) {
       whiteNotes.push(new Note(i * 60, 0));
       console.log(whiteNotes);
-      // whiteSound[i].play();
     }
     if (blackKeys[i] == key) {
       blackNotes.push(new note(blackLightsPos[i], 0));
       console.log(blackNotes);
-      // blackSound[i].play();
     }
   }
+  for (let i = 0; i < 10; i++) {
+    whiteLights.push(new Light(i * 60, 180));
+  }
+  for (let i = 0; i < 7; i++) {
+    blackLights.push(new light(blackLightsPos[i], 180));
+  }
 }
-// function playSound() {
-//   if (keyIsPressed) {
+// function keyPressed() {
 //     for (let i = 0; i < whiteKeys.length; i++) {
 //       if (whiteKeys[i] == key) {
 //         whiteSound[i].play();
@@ -283,5 +309,25 @@ function keyPressed() {
 //         blackSound[i].play();
 //       }
 //     }
-//   }
 // }
+function playSound() {
+  for(let i = 0; i < whiteSound.length; i++){
+    if(whiteSound[i]){
+      if(keyIsPressed && key == whiteKeys[i] && !whiteSound[i].isPlaying()){
+        push();
+        //noLoop();
+        whiteSound[i].play();
+        pop();
+      }
+    }
+  }
+}
+function keyReleased() {
+  for(let i = 0; i < whiteSound.length; i++){
+    if(whiteSound[i]){
+      if(key == whiteKeys[i] && whiteSound[i].isPlaying()){
+        whiteSound[i].stop();
+      }
+    }
+  }
+}

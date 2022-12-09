@@ -2,7 +2,9 @@ let mySound
 function preload() {
   mySound = loadSound("resource/euphoria.mp3")
 }
-
+function onVideoLoad() {
+  mySound.autoplay()
+}
 function mousePressed(){
   if(mySound.isPlaying() == false){
     mySound.play()

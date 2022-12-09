@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(resource/琴键背景.jpg);
+  background-attachment: fixed;
 }
 
 canvas {
