@@ -160,8 +160,8 @@ function draw() {
   }
   textSize(25)
   fill(230,Col)
-  text("Congratualations! Now please click the", 30, 300)
-  text("link 'HERE' on the left side", 100, 350)
+  text("Congratualations! Now please click the", 30, 200)
+  text("link 'HERE' on the left side", 100, 250)
   if (Col > 0) {
     Col = Col - 5
   }
