@@ -29,6 +29,7 @@ let noteX = [3, 3, 5, 6, 8, 6, 5, 5, 6, 5, 3, 3, 5, 6, 8, 6, 5, 5, 6, 5, 5, 5, 5
 let a;
 let Xbox = [];
 let col;
+let Col;
 let whiteIfDisplay = [
   false,
   false,
@@ -55,6 +56,7 @@ let blackLightsPos = [35, 155, 215, 335, 395, 455, 575];
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent("canvasContainer");
+  Col = 0
   col = 0
   color = 0
   env = new p5.Envelope(0.01, 1, 2, 0.1);
@@ -68,15 +70,6 @@ function draw() {
   background(20);
   strokeWeight(4);
   playSound();
-  if ( a = noteX.length - 1){
-    textSize(25)
-    fill(235)
-    push();
-    // textFont(Lobster);
-    text("Congratualations! Now please click the", 30, 400)
-    text("link 'HERE' on the left side", 100, 450)
-    pop();
-  }
   for (let k1 = 0; k1 < 10; k1++) {
     fill(235);
     rect(k1 * 60, 0, 60, 180);
@@ -125,7 +118,7 @@ function draw() {
         whiteNotes.splice(i, 1);
         col = 255
         console.log("good");  
-        a = a+1
+        a = a + 1;
       }
     }
   }
@@ -165,7 +158,19 @@ function draw() {
   if (color > 0) {
     color = color - 2.5
   }
+  textSize(25)
+  fill(230,Col)
+  text("Congratualations! Now please click the", 30, 400)
+  text("link 'HERE' on the left side", 100, 450)
+  if (Col > 0) {
+    Col = Col - 5
+  }
+  if ( a > 67) {
+    a = 0;
+    Col = 500
+  }
 }
+
 class Light {
   constructor(x, y) {
     this.x = x;
