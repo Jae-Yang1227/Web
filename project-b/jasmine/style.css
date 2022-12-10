@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(resource/茉莉花.jpg);
+  background-attachment: fixed;
+}
+
+canvas {
+  display: block;
+}
+
+h1 {
+  color: rgb(48, 28, 3);
+  font-size: 60px;
+  font-family: 'Lobster', cursive;
+}
+
+h2 {
+  color: rgb(57, 44, 2);
+  font-family: 'Lobster', cursive;
+  font-style: oblique;
+  font-size: 40px;
+}
+
+h3 {
+  color: rgb(45, 28, 15);
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+h4 {
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+
+h5 {
+  color: rgba(52, 39, 15, 0.824);
+  font-size: 20px;
+}
+
+div {
+  text-align: center;
+  margin: 3%;
+  background-color: rgba(240, 248, 255, 0.301);
+}
+
+#canvasContainer {
+  display: flex;
+  justify-content: center;
+}
